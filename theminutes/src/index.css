@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+
+  /* Custom scrollbar styling */
+  .custom-scrollbar::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-gray-100 rounded-full;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full hover:bg-gray-400 transition-colors;
+  }
+
+  /* Custom audio player styling */
+  audio {
+    @apply h-12;
+  }
+
+  audio::-webkit-media-controls-panel {
+    @apply bg-gray-50;
+  }
+
+  audio::-webkit-media-controls-current-time-display,
+  audio::-webkit-media-controls-time-remaining-display {
+    @apply text-gray-700 font-mono;
+  }
+
+  audio::-webkit-media-controls-timeline {
+    @apply bg-gray-200;
+  }
+
+  audio::-webkit-media-controls-play-button {
+    @apply bg-indigo-600 rounded-full;
+  }
+}
+
+@layer components {
+  .btn-mode {
+    @apply px-6 py-3 rounded-full font-medium transition-all duration-200 shadow hover:shadow-lg;
+  }
+  
+  .btn-mode-active {
+    @apply shadow-lg text-white;
+  }
+  
+  .btn-mode-transcribe {
+    @apply hover:bg-gradient-to-r hover:from-indigo-600 hover:to-purple-600 hover:text-white;
+  }
+  
+  .btn-mode-translate {
+    @apply hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 hover:text-white;
+  }
+  
+  .btn-mode-timestamps {
+    @apply hover:bg-gradient-to-r hover:from-pink-600 hover:to-red-600 hover:text-white;
+  }
+  
+  .btn-mode-words {
+    @apply hover:bg-gradient-to-r hover:from-red-600 hover:to-orange-600 hover:text-white;
+  }
+
+  .results-container {
+    @apply max-h-[600px] overflow-y-auto custom-scrollbar pr-4;
+  }
+
+  .custom-audio-player {
+    @apply rounded-lg shadow-inner bg-gray-50;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600;
+  }
+  
+  .glass-effect {
+    @apply bg-white bg-opacity-80 backdrop-blur-lg;
+  }
+
+  .scale-102 {
+    transform: scale(1.02);
+  }
+}
